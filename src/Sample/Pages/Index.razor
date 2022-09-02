@@ -1,0 +1,36 @@
+﻿@page "/"
+
+<PageTitle>BlazorInputMask</PageTitle>
+
+<div class="container-fluid">
+    <h1>BlazorInputMask</h1>
+
+    <EditForm Model="Model">
+        <div class="mb-3">
+            <label>Product code. Format: 00-00-00</label>
+            <InputMask DataMask="00-00-00" @bind-Value="Model.ProductCode" @bind-RawValue="Model.ProductCodeUnmasked" class="form-control my-1" style="max-width:10rem;"></InputMask>
+            <h6>Masked value: <b>@Model.ProductCode</b></h6>
+            <h6>Unmasked value: <b>@Model.ProductCodeUnmasked</b></h6>
+        </div>
+
+        <div class="mb-2">
+            <label>Telephone. Format: (000)000-00-00</label>
+            <InputMask DataMask="(000)000-00-00" @bind-Value="Model.Telephone" @bind-RawValue="Model.TelephoneUnmasked" class="form-control my-1" style="max-width:10rem;"></InputMask>
+            <h6>Masked value: <b>@Model.Telephone</b></h6>
+            <h6>Unmasked value: <b>@Model.TelephoneUnmasked</b></h6>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    public InputModel Model { get; set; } = new InputModel();
+
+    public class InputModel
+    {
+        public string ProductCode { get; set; } = "";
+        public string ProductCodeUnmasked { get; set; } = "";
+
+        public string Telephone { get; set; } = "";
+        public string TelephoneUnmasked { get; set; } = "";
+    }
+}
