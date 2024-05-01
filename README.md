@@ -12,13 +12,7 @@ Available on Nuget as PPioli.BlazorInputMask.
 
 ### How to use it
 
-In your index.html file include iMask.js as in
-
-```
-<script src="https://unpkg.com/imask@6.4.2/dist/imask.min.js"></script>
-```
-
-Then in your _Imports.razor file add
+In your _Imports.razor file add
 
 ```
 @using BlazorInputMask
